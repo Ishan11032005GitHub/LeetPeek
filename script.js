@@ -38,3 +38,9 @@ function getData(event){
       console.error("Error in fetching data:", error);
     });
 }
+document.getElementById("fetch").addEventListener("keydown",(e)=>{
+    if(e.key==="Enter"){
+      getData();
+    }
+  }
+)
