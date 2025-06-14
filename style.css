@@ -1,0 +1,177 @@
+:root{
+  --bg-color: #F0F2BD;
+  --text-color: #4B352A;
+  --ip-color: rgba(0,0,0,0.375);
+  --theme-color: #4B352A;
+}
+body.dark{
+  --bg-color: #4B352A;
+  --text-color: #D2D39E;
+  --ip-color: rgba(255,255,255,0.375);
+  --theme-color: #D2D39E;
+}
+body{
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: sans-serif;
+  margin: 0;
+  padding: 20px;
+  overflow-x: hidden;
+}
+.top-bar{
+  position: fixed;
+  top: 2.5px;
+  right: 10px;
+  z-index: 1000;
+  display: flex;
+  justify-content: flex-end;
+}
+#themeToggle{
+  padding: 8px 12px;
+  cursor: pointer;
+  border: none;
+  border-radius: 50%;
+}
+body.dark #themeToggle{
+  background-color: var(--theme-color);
+  color: var(--bg-color);
+}
+form{
+  text-align: center;
+  margin-top: 12.5vh;
+}
+label{
+  font-size: 2.5em;
+}
+input{
+  font-size: 2.25em;
+  padding: 10px;
+  background-color: transparent;
+  color: var(--text-color);
+  outline: none;
+  border: none;
+  border-bottom: 2px solid var(--text-color);
+}
+input:focus{
+  background: transparent;
+}
+input::placeholder{
+  color: var(--ip-color);
+}
+button{
+  margin-top: 6.25vh;
+  font-size: 2em;
+  border-radius: 5px;
+  background-color: #CA7842;
+}
+#stats{
+  display: flex;
+}
+#rank{
+    width: 100vw;
+    font-size: 25px;
+  }
+h3{
+  font-style: system-ui;
+  text-align: center;
+  font-size: 3em;
+}
+#userIdandRank{
+  text-align: justify;
+  width: 50%;
+  font-size: 2.5em;
+}
+#detail{
+  text-align: justify;
+  width: 50%;
+  font-size: 1.5em;
+}
+@media screen and (max-width:900px){
+  h3{
+    font-size: 3em;
+  }
+  #data{
+    margin-top: 15vh;
+  }
+  #userIdandRank{
+    font-size: 2.25em;
+  }
+  #detail{
+    font-size: 1em;
+  }
+  label{
+  font-size: 2em;
+  }
+  input{
+  font-size: 2em;
+  padding: 7.5px;
+  }
+}
+@media screen and (max-width:700px){
+  label{
+  font-size: 1.5em;
+  }
+  input{
+  font-size: 1.5em;
+  padding: 5px;
+  }
+}
+@media screen and (max-width:650px){
+  h3{
+    font-size: 2.25em;
+  }
+  #stats{
+    display: block;
+  }
+  #userIdandRank{
+    font-size: 2em;
+    display: block;
+    padding-left: 20vw;
+  }
+  #detail{
+    display: block;
+    text-align: justify;
+    padding-left: 20vw;
+    margin-top: 3vh;
+  }
+}
+@media screen and (max-width:600px){
+  .top-bar{
+  margin-top: 10px;
+  margin-right: 5px;
+  padding: 4px;
+  }
+  #themeToggle{
+    margin-top: 0;
+    padding: 4px;
+  }
+}
+@media screen and (max-width:500px){
+  label{
+  font-size: 1.25em;
+  }
+  input{
+  font-size: 1.25em;
+  padding: 5px;
+  }
+}
+@media screen and (max-width:525px){
+  #userIdandRank{
+    padding-left: 30px;
+  }
+  #detail{
+    font-size: 1em;
+    padding-left: 0;
+    text-align: left;
+    padding-left: 5px;
+  }
+  li{
+    width: 100vw;
+  }
+}
+@media screen and (max-width:460px){
+  #rank{
+    width: 100vw;
+    font-size: 20px;
+  }
+}

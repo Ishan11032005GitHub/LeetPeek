@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="style.css" />
+  <title>LeetView</title>
+</head>
+<body>
+  <div class="top-bar">
+    <button id="themeToggle">☀️</button>
+  </div>
+
+  <form onsubmit="getData(event)">
+    <label>UserName : </label>
+    <input type="text" id="userName" placeholder="Enter your name..." /><br>
+    <button type="submit" id="fetch" style="cursor: pointer;">Get Data</button>
+  </form>
+
+  <div id="data"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
