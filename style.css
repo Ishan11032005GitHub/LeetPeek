@@ -1,177 +1,149 @@
-:root{
-  --bg-color: #F0F2BD;
-  --text-color: #4B352A;
-  --ip-color: rgba(0,0,0,0.375);
-  --theme-color: #4B352A;
+:root {
+  --bg-color: #fdfdfd;
+  --text-color: #1e1e1e;
+  --input-bg: #ffffff;
+  --accent-color: #ff914d;
+  --card-bg: #ffffff;
+  --input-border: #ccc;
 }
-body.dark{
-  --bg-color: #4B352A;
-  --text-color: #D2D39E;
-  --ip-color: rgba(255,255,255,0.375);
-  --theme-color: #D2D39E;
+
+body.dark {
+  --bg-color: #1e1e1e;
+  --text-color: #f0f0f0;
+  --input-bg: #2c2c2c;
+  --accent-color: #ffa24d;
+  --card-bg: #2b2b2b;
+  --input-border: #555;
 }
-body{
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
   background-color: var(--bg-color);
   color: var(--text-color);
-  font-family: sans-serif;
-  margin: 0;
-  padding: 20px;
-  overflow-x: hidden;
+  transition: all 0.3s ease;
 }
-.top-bar{
+
+.top-bar {
   position: fixed;
-  top: 2.5px;
-  right: 10px;
+  top: 15px;
+  right: 20px;
   z-index: 1000;
-  display: flex;
-  justify-content: flex-end;
 }
-#themeToggle{
-  padding: 8px 12px;
-  cursor: pointer;
+
+#themeToggle {
+  font-size: 1.5rem;
+  background: var(--accent-color);
   border: none;
+  color: white;
   border-radius: 50%;
-}
-body.dark #themeToggle{
-  background-color: var(--theme-color);
-  color: var(--bg-color);
-}
-form{
-  text-align: center;
-  margin-top: 12.5vh;
-}
-label{
-  font-size: 2.5em;
-}
-input{
-  font-size: 2.25em;
   padding: 10px;
-  background-color: transparent;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+#themeToggle:hover {
+  background: #ff7a2d;
+}
+
+main {
+  padding: 6rem 1rem 2rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+form h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+form label {
+  font-size: 1.25rem;
+}
+
+input {
+  padding: 10px 15px;
+  font-size: 1.1rem;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 5px;
+  border: 1px solid var(--input-border);
+  background-color: var(--input-bg);
   color: var(--text-color);
   outline: none;
+  transition: 0.3s;
+}
+input:focus {
+  border-color: var(--accent-color);
+}
+
+button {
+  padding: 12px 20px;
+  font-size: 1.2rem;
+  background-color: var(--accent-color);
+  color: #fff;
   border: none;
-  border-bottom: 2px solid var(--text-color);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
 }
-input:focus{
-  background: transparent;
+button:hover {
+  background-color: #ff7a2d;
 }
-input::placeholder{
-  color: var(--ip-color);
+
+#data {
+  margin-top: 3rem;
 }
-button{
-  margin-top: 6.25vh;
-  font-size: 2em;
-  border-radius: 5px;
-  background-color: #CA7842;
-}
-#stats{
-  display: flex;
-}
-#rank{
-    width: 100vw;
-    font-size: 25px;
-  }
-h3{
-  font-style: system-ui;
+
+h3 {
   text-align: center;
-  font-size: 3em;
+  font-size: 2rem;
 }
-#userIdandRank{
-  text-align: justify;
-  width: 50%;
-  font-size: 2.5em;
+
+#stats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1.5rem;
 }
-#detail{
-  text-align: justify;
-  width: 50%;
-  font-size: 1.5em;
+
+.stat-card {
+  background-color: var(--card-bg);
+  padding: 1.25rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 280px;
+  transition: transform 0.2s ease;
 }
-@media screen and (max-width:900px){
-  h3{
-    font-size: 3em;
-  }
-  #data{
-    margin-top: 15vh;
-  }
-  #userIdandRank{
-    font-size: 2.25em;
-  }
-  #detail{
-    font-size: 1em;
-  }
-  label{
-  font-size: 2em;
-  }
-  input{
-  font-size: 2em;
-  padding: 7.5px;
-  }
+.stat-card:hover {
+  transform: scale(1.02);
 }
-@media screen and (max-width:700px){
-  label{
-  font-size: 1.5em;
-  }
-  input{
-  font-size: 1.5em;
-  padding: 5px;
-  }
+.stat-card ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
-@media screen and (max-width:650px){
-  h3{
-    font-size: 2.25em;
-  }
-  #stats{
-    display: block;
-  }
-  #userIdandRank{
-    font-size: 2em;
-    display: block;
-    padding-left: 20vw;
-  }
-  #detail{
-    display: block;
-    text-align: justify;
-    padding-left: 20vw;
-    margin-top: 3vh;
-  }
+.stat-card li {
+  margin-bottom: 10px;
+  font-size: 1.05rem;
 }
-@media screen and (max-width:600px){
-  .top-bar{
-  margin-top: 10px;
-  margin-right: 5px;
-  padding: 4px;
+
+@media (max-width: 500px) {
+  form h1 {
+    font-size: 2rem;
   }
-  #themeToggle{
-    margin-top: 0;
-    padding: 4px;
+  #themeToggle {
+    padding: 8px;
+    font-size: 1.25rem;
   }
-}
-@media screen and (max-width:500px){
-  label{
-  font-size: 1.25em;
-  }
-  input{
-  font-size: 1.25em;
-  padding: 5px;
-  }
-}
-@media screen and (max-width:525px){
-  #userIdandRank{
-    padding-left: 30px;
-  }
-  #detail{
-    font-size: 1em;
-    padding-left: 0;
-    text-align: left;
-    padding-left: 5px;
-  }
-  li{
-    width: 100vw;
-  }
-}
-@media screen and (max-width:460px){
-  #rank{
-    width: 100vw;
-    font-size: 20px;
+  .stat-card {
+    width: 90%;
   }
 }
