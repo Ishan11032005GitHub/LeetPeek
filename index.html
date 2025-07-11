@@ -8,16 +8,19 @@
 </head>
 <body>
   <div class="top-bar">
-    <button id="themeToggle">☀️</button>
+    <button id="themeToggle" title="Toggle Theme">🌙</button>
   </div>
 
-  <form onsubmit="getData(event)">
-    <label>UserName : </label>
-    <input type="text" id="userName" placeholder="Enter your name..." /><br>
-    <button type="submit" id="fetch" style="cursor: pointer;">Fetch Data</button>
-  </form>
+  <main>
+    <form onsubmit="getData(event)">
+      <h1>LeetView</h1>
+      <label for="userName">LeetCode Username</label>
+      <input type="text" id="userName" placeholder="e.g. johndoe" required />
+      <button type="submit" id="fetch">Fetch Stats</button>
+    </form>
 
-  <div id="data"></div>
+    <section id="data"></section>
+  </main>
 
   <script src="script.js"></script>
 </body>
